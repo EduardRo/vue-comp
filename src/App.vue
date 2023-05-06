@@ -1,19 +1,20 @@
 
-import 
+
+
 
 <script>
+import Card from './components/Greeting.vue';
+
+
 export default {
-  name:'App',
-  data(){ return ({msg:"Hello World"})
-
-  }
-
-}
+    name: "App",
+   
+};
 </script>
 
 <template>
 <p> from zeroo</p>
-
+<Greetings />
 <h2>{{ msg }}</h2>
 </template>
 
