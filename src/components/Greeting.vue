@@ -6,12 +6,17 @@
 
 <script>
 export default {
-    name:'Greeting',
+    name:'Greetings',
     data() {
         return {
-            msg:"Greetngs to you r mother!"
+            msg:"Greetngs to"
         }
     },
 }
 
 </script>
+<style scoped lang="scss">
+p:hover {
+    color:darken(rgb(255, 0, 0),16%);
+}
+</style>
