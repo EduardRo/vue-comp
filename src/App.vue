@@ -1,9 +1,9 @@
 
 <template>
-  <h3> from zeroo</h3>
+  <h3> Age {{ age }}</h3>
   <Greeting :age="age"></Greeting>
-  <User v-bind:age="age" :name="name"></User>
-  
+  <User v-bind:age="age" :name="name" @age-change="plusAg()"></User>
+  <User v-bind:age="age" @age-change="age++"></User>
   <input type="number" v-model.number="age"/>
   <input type="text" v-model.lazy="name" />
   <card></card>
@@ -29,6 +29,12 @@ export default {
       return{
         age:20,
         name:''
+      }
+    },
+    methods:{
+      plusAg(){
+        this.age=this.age+5;
+        return age
       }
     }
    
