@@ -1,7 +1,6 @@
 <template>
-    <p>
-{{ msg }}
-    </p>
+    <p v-if="(age>25)"> Greeting for this age mtf {{ age }}</p>
+    <p v-else>You must be 25 years olders to view this message</p>
 </template>
 
 <script>
@@ -12,6 +11,7 @@ export default {
             msg:"Greetngs to"
         }
     },
+    props:["age"]
 }
 
 </script>
