@@ -1,17 +1,17 @@
 <template>
-    <div>
-        <p>{{ msg }}</p>
-    </div>
+    <p>
+{{ msg }}
+    </p>
 </template>
 
 <script>
 export default {
     name:'Greeting',
-    data () {
-        
-
-        return {msg:'this is Greetings'}
-    }
+    data() {
+        return {
+            msg:"Greetngs to you r mother!"
+        }
+    },
 }
-</script>
 
+</script>
