@@ -2,10 +2,13 @@
 <template>
   <h3> Age {{ age }}</h3>
   <Greeting :age="age"></Greeting>
-  <User v-bind:age="age" v-bind:name="name" @age-change="plusAg" />
+  <User v-bind:age="age" v-bind:firstname="firstName" :lastname="lastName" @age-change="plusAg" />
   <User v-bind:age="age" @age-change="age++"></User>
   <input type="number" v-model.number="age"/>
-  <input type="text" v-model.lazy="name" />
+  <label>First Name</label>
+  <input type="text" v-model.lazy="firstName" />
+  <label>Last Name</label>
+  <input type="text" v-model.lazy="lastName" />
   <card></card>
   <button type="button" v-on:click="age++">Add age</button>
   </template>
@@ -29,6 +32,8 @@ export default {
     data(){
       return{
         age:20,
+        firstName:'Emil',
+        lastName:'Buran',
         name:''
       }
     },
