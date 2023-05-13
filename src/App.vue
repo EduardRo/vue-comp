@@ -2,8 +2,8 @@
 <template>
   <h3> Age {{ age }}</h3>
   <Greeting :age="age"></Greeting>
-  <User v-bind:age="age" v-bind:firstname="firstName" :lastname="lastName" @age-change="plusAg" />
-  <User v-bind:age="age" @age-change="age++"></User>
+  <User v-bind:age="age" v-bind:firstname="firstName" :lastname="lastName" @age-change="plusAg" :ageChangeFn="updateAgeCB" />
+  <User v-bind:age="age" v-bind:firstname="firstName" :lastname="lastName" @age-change="age++"></User>
   <input type="number" v-model.number="age"/>
   <label>First Name</label>
   <input type="text" v-model.lazy="firstName" />
@@ -41,7 +41,11 @@ export default {
       plusAg(num){
         this.age=this.age+num;
         //return age
+      },
+      updateAgeCB(num){
+        this.age+=num
       }
+
     }
    
 };
