@@ -2,7 +2,7 @@
 <template>
   <h3> Age {{ age }}</h3>
   <Greeting :age="age"></Greeting>
-  <User v-bind:age="age" :name="name" @age-change="plusAg()"></User>
+  <User v-bind:age="age" v-bind:name="name" @age-change="plusAg" />
   <User v-bind:age="age" @age-change="age++"></User>
   <input type="number" v-model.number="age"/>
   <input type="text" v-model.lazy="name" />
@@ -15,6 +15,7 @@
 import Greeting from './components/Greeting.vue';
 import Card from './components/Card.vue';
 import User from './components/User.vue';
+import MyCard from './components/MyCard.vue';
 
 
 export default {
@@ -32,9 +33,9 @@ export default {
       }
     },
     methods:{
-      plusAg(){
-        this.age=this.age+5;
-        return age
+      plusAg(num){
+        this.age=this.age+num;
+        //return age
       }
     }
    
